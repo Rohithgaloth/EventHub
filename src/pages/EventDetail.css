@@ -1,0 +1,372 @@
+.event-detail {
+    padding-top: 80px;
+}
+
+/* Banner */
+.ed-banner {
+    position: relative;
+    padding: 80px 0 60px;
+    overflow: hidden;
+}
+
+.ed-banner__bg {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #1a0a3e 0%, #0a1a3e 50%, #0a0a12 100%);
+}
+
+.ed-banner__bg::before {
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(109, 16, 255, 0.25), transparent 70%);
+    top: -200px;
+    right: -100px;
+    filter: blur(60px);
+}
+
+.ed-banner__content {
+    position: relative;
+    z-index: 1;
+}
+
+.ed-banner h1 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin: 16px 0;
+}
+
+.ed-banner__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+.ed-banner__meta span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    color: var(--neutral-400);
+}
+
+.ed-banner__actions {
+    display: flex;
+    gap: 12px;
+}
+
+/* Layout */
+.ed-layout {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 40px;
+    padding: 48px 24px 80px;
+}
+
+.ed-section {
+    margin-bottom: 48px;
+}
+
+.ed-section h3 {
+    font-size: 1.4rem;
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.ed-description p {
+    font-size: 0.95rem;
+    color: var(--neutral-400);
+    line-height: 1.8;
+    margin-bottom: 16px;
+}
+
+/* Agenda */
+.ed-agenda {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.agenda-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 0;
+    position: relative;
+}
+
+.agenda-item__time {
+    width: 80px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--neutral-400);
+    flex-shrink: 0;
+}
+
+.agenda-item__dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--primary-500);
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+}
+
+.agenda-item--break .agenda-item__dot {
+    background: var(--accent-400);
+}
+
+.agenda-item--workshop .agenda-item__dot {
+    background: var(--success-400);
+}
+
+.agenda-item::after {
+    content: '';
+    position: absolute;
+    left: 85px;
+    top: 28px;
+    bottom: -16px;
+    width: 2px;
+    background: rgba(109, 16, 255, 0.2);
+}
+
+.agenda-item:last-child::after {
+    display: none;
+}
+
+.agenda-item__title {
+    font-weight: 500;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.agenda-item__type {
+    font-size: 0.7rem;
+    padding: 3px 10px;
+    border-radius: var(--radius-full);
+    background: rgba(109, 16, 255, 0.1);
+    color: var(--primary-300);
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* Speakers */
+.ed-speakers {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.speaker-card {
+    text-align: center;
+    padding: 28px 20px;
+}
+
+.speaker-card__avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: var(--gradient-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 auto 14px;
+}
+
+.speaker-card h5 {
+    margin-bottom: 4px;
+    font-size: 1rem;
+}
+
+.speaker-card p {
+    font-size: 0.8rem;
+    color: var(--neutral-500);
+}
+
+/* Sidebar */
+.ed-sidebar {
+    position: sticky;
+    top: 100px;
+    align-self: start;
+}
+
+.ed-ticket-box {
+    margin-bottom: 20px;
+}
+
+.ed-ticket-box h4 {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.ticket-tier {
+    padding: 16px;
+    background: var(--surface-elevated);
+    border-radius: var(--radius-md);
+    margin-bottom: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.ticket-tier__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12px;
+}
+
+.ticket-tier__name {
+    font-weight: 600;
+    color: #fff;
+    font-size: 0.95rem;
+}
+
+.ticket-tier__price {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--primary-300);
+}
+
+.ticket-tier__desc {
+    font-size: 0.8rem;
+    color: var(--neutral-500);
+    margin-top: 4px;
+}
+
+.ticket-tier__qty {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.qty-btn {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: var(--surface-glass);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-fast);
+}
+
+.qty-btn:hover {
+    background: var(--primary-500);
+    border-color: var(--primary-500);
+}
+
+.ticket-tier__qty span {
+    font-weight: 600;
+    color: #fff;
+    min-width: 20px;
+    text-align: center;
+}
+
+.ticket-tier__perks {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.ticket-tier__perks span {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.75rem;
+    color: var(--neutral-500);
+}
+
+.ticket-tier__perks svg {
+    color: var(--success-400);
+}
+
+.ticket-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    margin-top: 8px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.ticket-total__amount {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--success-400);
+}
+
+.ticket-register {
+    width: 100%;
+    margin-top: 8px;
+}
+
+/* Organizer */
+.ed-organizer h5 {
+    margin-bottom: 16px;
+}
+
+.ed-organizer__info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.ed-organizer__avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--gradient-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: 700;
+}
+
+.ed-organizer__name {
+    font-weight: 600;
+    color: #fff;
+}
+
+.ed-organizer__events {
+    font-size: 0.8rem;
+    color: var(--neutral-500);
+}
+
+.ed-organizer__rating {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.8rem;
+    color: var(--neutral-500);
+}
+
+@media (max-width: 900px) {
+    .ed-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .ed-sidebar {
+        position: static;
+    }
+
+    .ed-speakers {
+        grid-template-columns: 1fr;
+    }
+}
