@@ -1,0 +1,13 @@
+version: 2
+updates:
+  # Maintain dependencies for the React frontend
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      
+  # Maintain dependencies for the Express backend
+  - package-ecosystem: "npm"
+    directory: "/server"
+    schedule:
+      interval: "weekly"
