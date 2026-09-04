@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Zap, Mail, MapPin, Phone, Github, Twitter, Linkedin, Instagram } from 'lucide-react';
+import { Zap, Mail, MapPin, Phone, Code2, MessageCircle, BriefcaseBusiness, Camera } from 'lucide-react';
 import './Footer.css';
 
 export default function Footer() {
@@ -19,10 +19,10 @@ export default function Footer() {
                             The all-in-one AI-powered platform for effortless event management, ticketing, and attendee engagement.
                         </p>
                         <div className="footer__socials">
-                            <a href="#" className="footer__social" aria-label="Twitter"><Twitter size={18} /></a>
-                            <a href="#" className="footer__social" aria-label="LinkedIn"><Linkedin size={18} /></a>
-                            <a href="#" className="footer__social" aria-label="Instagram"><Instagram size={18} /></a>
-                            <a href="#" className="footer__social" aria-label="Github"><Github size={18} /></a>
+                            <a href="#" className="footer__social" aria-label="Twitter"><MessageCircle size={18} /></a>
+                            <a href="#" className="footer__social" aria-label="LinkedIn"><BriefcaseBusiness size={18} /></a>
+                            <a href="#" className="footer__social" aria-label="Instagram"><Camera size={18} /></a>
+                            <a href="#" className="footer__social" aria-label="Code"><Code2 size={18} /></a>
                         </div>
                     </div>
 

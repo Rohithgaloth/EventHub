@@ -15,7 +15,13 @@ const app = express();
 
 // ── CORS ──
 app.use(cors({
-    origin: process.env.CLIENT_URL || 'http://localhost:5173',
+    origin: (origin, callback) => {
+        const allowedOrigin = !origin ||
+            origin === process.env.CLIENT_URL ||
+            /^https?:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/.test(origin);
+
+        callback(null, allowedOrigin ? origin || true : false);
+    },
     credentials: true,
 }));
 
